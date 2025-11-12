@@ -1,43 +1,31 @@
 package com.distribuida.model;
 
-public class Cliente {
-
-        // ATRIBUTOS
-    private int idCliente;
-    private String cedula;
+public class Autor {
+    private int idAutor;
     private String nombre;
     private String apellido;
+    private String pais;
     private String direccion;
     private String telefono;
     private String correo;
 
-    // CONSTRUCTOR
-    public Cliente(){ }
 
-    public Cliente(int idCliente, String cedula, String nombre, String apellido, String direccion, String telefono, String correo) {
-        this.idCliente = idCliente;
-        this.cedula = cedula;
+    public Autor(int idAutor, String nombre, String apellido, String pais, String direccion, String telefono, String correo) {
+        this.idAutor = idAutor;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.pais = pais;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
     }
-            // GETTERS AND SETTERS
-    public int getIdCliente() {
-        return idCliente;
+
+    public int getIdAutor() {
+        return idAutor;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setIdAutor(int idAutor) {
+        this.idAutor = idAutor;
     }
 
     public String getNombre() {
@@ -54,6 +42,14 @@ public class Cliente {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     public String getDireccion() {
@@ -82,11 +78,11 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "idCliente=" + idCliente +
-                ", cedula='" + cedula + '\'' +
+        return "Autor{" +
+                "idAutor=" + idAutor +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
+                ", pais='" + pais + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", correo='" + correo + '\'' +
