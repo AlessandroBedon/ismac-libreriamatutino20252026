@@ -85,7 +85,6 @@ public class FacturaTestUnitaria {
                 () -> assertTrue(str.contains("115.0")),
                 () -> assertTrue(str.contains("Lil"))
                 );
-
     }
 
     @Test
