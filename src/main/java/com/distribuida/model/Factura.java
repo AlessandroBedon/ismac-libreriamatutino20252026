@@ -1,23 +1,37 @@
 package com.distribuida.model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name="factura")
 public class Factura {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_factura")
     private int idFactura;
+    @Column(name = "num_factura")
     private String numFactura;
+    @Column(name = "fecha")
     private Date fecha;
+    @Column(name = "total_neto")
     private Double totalNeto;
+    @Column(name = "iva")
     private Double iva;
+    @Column(name = "total")
     private Double total;
 
     //private int idCliente;
-        //Inyeccion de Dependencias
+    //Inyeccion de Dependencias
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
-    //Constructor
     public Factura(){ }
 
+    //Constructor
     public Factura(int idFactura, String numFactura, Date fecha, Double totalNeto, Double iva, Double total, Cliente cliente) {
         this.idFactura = idFactura;
         this.numFactura = numFactura;
