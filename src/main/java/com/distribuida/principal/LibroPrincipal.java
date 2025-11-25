@@ -15,7 +15,7 @@ public class LibroPrincipal {
         libro.setTitulo("Cien años de soledad");
         libro.setEditorial("Editorial Sudamericana");
         libro.setNumpaginas(471);
-        libro.setEdicion("Primera edición");
+        libro.setEdicion("Primera edicion");
         libro.setIdioma("Español");
         libro.setFechapublicacion(new Date( ));
         libro.setDescripcion("Una obra maestra de Gabriel García Márquez que narra la historia de la familia Buendía en el mítico pueblo de Macondo.");
@@ -23,7 +23,7 @@ public class LibroPrincipal {
         libro.setIsbn("978-84-376-0494-7");
         libro.setNumejemplares(25);
         libro.setPortada("https://example.com/portadas/cien-anos-de-soledad.jpg");
-        libro.setPresentacion("Libro físico");
+        libro.setPresentacion("Libro fisico");
         libro.setPrecio(349.99);
 
         //Categoria

@@ -66,7 +66,7 @@ public class ClienteTestUnitaria {
                 () -> assertTrue(str.contains("Moni")),
                 () -> assertTrue(str.contains("Av. Mucha calle")),
                 () -> assertTrue(str.contains("099863154")),
-                () -> assertTrue(str.contains("lilmoni@bitcoin.com"))
+                    () -> assertTrue(str.contains("lilmoni@bitcoin.com"))
                 );
     }
 
