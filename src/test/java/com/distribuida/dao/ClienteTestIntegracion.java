@@ -66,7 +66,7 @@ public class ClienteTestIntegracion {
         assertEquals("Mari2", clienteActualizado.getNombre());
         assertEquals("Con2", clienteActualizado.getApellido());
     }
-
+//
     @Test
     public void delete() {
         if (clienteDAO.existsById(40)) {
