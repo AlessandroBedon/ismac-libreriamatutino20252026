@@ -14,7 +14,6 @@ public class FacturaServiceImpl implements FacturService{
     @Autowired
     private FacturaDAO facturaDAO;
 
-
     @Override
     public List<Factura> finfAll() {
         return facturaDAO.findAll();

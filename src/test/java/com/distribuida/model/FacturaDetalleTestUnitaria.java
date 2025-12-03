@@ -3,6 +3,7 @@ package com.distribuida.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,7 @@ public class FacturaDetalleTestUnitaria {
 
         facturaDetalle.setIdFacturaDetalle(2);
         facturaDetalle.setCantidad(25);
-        facturaDetalle.setSubtotal(58.8);
+        facturaDetalle.setSubtotal(new BigDecimal("58.8"));
 
         factura = new Factura();
 

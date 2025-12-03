@@ -75,13 +75,13 @@ public class FacturaTestIntegracion {
 
         assertTrue(cliente.isPresent());
 
-        Optional<Factura> factura = facturaDAO.findById(87);
+        Optional<Factura> factura = facturaDAO.findById(94);
 
         assertTrue(factura.isPresent());
 
         factura.orElse(null).setNumFactura("FAC-00077");
         factura.orElse(null).setFecha(new Date());
-        factura.orElse(null).setTotalNeto(200.00);
+        factura.orElse(null).setTotalNeto(200.0);
         factura.orElse(null).setIva(60.00);
         factura.orElse(null).setTotal(260.00);
         factura.orElse(null).setCliente(cliente.orElse(null));
@@ -95,14 +95,9 @@ public class FacturaTestIntegracion {
 
     @Test
     public void testFacturaDelete(){
-        if (facturaDAO.existsById(87)){
-            facturaDAO.deleteById(87);
-
-
+        if (facturaDAO.existsById(94)){
+            facturaDAO.deleteById(94);
         }
-        assertFalse(facturaDAO.existsById(87),"********EL DATO FUE ELIMINADO*******");
+        assertFalse(facturaDAO.existsById(94),"********EL DATO FUE ELIMINADO*******");
     }
 }
-
-
-

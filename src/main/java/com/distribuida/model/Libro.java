@@ -1,29 +1,52 @@
 package com.distribuida.model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "libro")
 public class Libro {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_libro")
     private int idlibro;
+    @Column(name = "titulo")
     private String titulo;
+    @Column(name = "editorial")
     private String editorial;
+    @Column(name = "num_paginas")
     private int numpaginas;
+    @Column(name = "edicion")
     private String edicion;
+    @Column(name = "idioma")
     private String idioma;
+    @Column(name = "fecha_publicacion")
     private Date fechapublicacion;
+    @Column(name = "descripcion")
     private String descripcion;
+    @Column(name = "tipo_pasta")
     private String tipopasta;
+    @Column(name = "ISBN")
     private String isbn;
+    @Column(name = "num_ejemplares")
     private int numejemplares;
+    @Column(name = "portada")
     private String portada;
+    @Column(name = "presentacion")
     private String presentacion;
+    @Column(name = "precio")
     private Double precio;
 
-    private FacturaDetalle facturaDetalle;
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
     private Categoria categoria;
+    @ManyToOne
+    @JoinColumn(name = "id_autor")
     private Autor autor;
-    public Libro (){ }
 
+    public Libro (){ }
 
     public Libro(int libro, String titulo, String editorial, int numpaginas, String edicion, String idioma, Date fechapublicacion, String descripcion, String tipopasta, String isbn, int numejemplares, String portada, String presentacion, Double precio, FacturaDetalle facturaDetalle, Categoria categoria, Autor autor) {
         this.idlibro = libro;
@@ -40,7 +63,6 @@ public class Libro {
         this.portada = portada;
         this.presentacion = presentacion;
         this.precio = precio;
-        this.facturaDetalle = facturaDetalle;
         this.categoria = categoria;
         this.autor = autor;
     }
@@ -157,13 +179,6 @@ public class Libro {
         this.precio = precio;
     }
 
-    public FacturaDetalle getFacturaDetalle() {
-        return facturaDetalle;
-    }
-
-    public void setFacturaDetalle(FacturaDetalle facturaDetalle) {
-        this.facturaDetalle = facturaDetalle;
-    }
 
     public Categoria getCategoria() {
         return categoria;
@@ -198,7 +213,6 @@ public class Libro {
                 ", portada='" + portada + '\'' +
                 ", presentacion='" + presentacion + '\'' +
                 ", precio=" + precio +
-                ", facturaDetalle=" + facturaDetalle +
                 ", categoria=" + categoria +
                 ", autor=" + autor +
                 '}';

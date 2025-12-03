@@ -24,10 +24,10 @@ public class Autor {
     @Column(name = "correo")
     private String correo;
 
-
+    public Autor() {}
     public Autor(int idAutor, String nombre, String apellido, String pais, String direccion, String telefono, String correo) {
-        this.idAutor = idAutor;
         this.nombre = nombre;
+        this.idAutor = idAutor;
         this.apellido = apellido;
         this.pais = pais;
         this.direccion = direccion;
