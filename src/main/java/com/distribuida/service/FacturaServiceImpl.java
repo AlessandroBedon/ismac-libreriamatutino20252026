@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FacturaServiceImpl implements FacturService{
+public class FacturaServiceImpl implements FacturaService {
 
     @Autowired
     private FacturaDAO facturaDAO;
 
     @Override
-    public List<Factura> finfAll() {
+    public List<Factura> findAll() {
         return facturaDAO.findAll();
     }
 
