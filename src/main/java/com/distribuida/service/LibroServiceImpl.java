@@ -4,10 +4,12 @@ import com.distribuida.dao.LibroDAO;
 import com.distribuida.model.Cliente;
 import com.distribuida.model.Libro;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LibroServiceImpl implements LibroService{
 
     @Autowired

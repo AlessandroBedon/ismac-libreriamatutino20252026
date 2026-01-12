@@ -4,10 +4,12 @@ import com.distribuida.dao.FacturaDetalleDAO;
 import com.distribuida.model.Cliente;
 import com.distribuida.model.FacturaDetalle;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class FacturaDetalleServiceImpl implements FacturaDetalleService {
 
     @Autowired
