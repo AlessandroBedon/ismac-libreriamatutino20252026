@@ -3,7 +3,6 @@ package com.distribuida.controller;
 import com.distribuida.model.Factura;
 import com.distribuida.model.FacturaDetalle;
 import com.distribuida.service.FacturaDetalleService;
-import com.distribuida.service.FacturaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +19,7 @@ public class FacturaDetalleController {
 
     @GetMapping
     public ResponseEntity<List<FacturaDetalle>> findAll(){
+
         return ResponseEntity.ok(facturaDetalleService.findAll());
     }
 

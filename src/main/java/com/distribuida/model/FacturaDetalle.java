@@ -1,7 +1,6 @@
 package com.distribuida.model;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
 @Entity
@@ -12,27 +11,28 @@ public class FacturaDetalle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_factura_detalle")
     private int idFacturaDetalle;
+
     @Column(name = "cantidad")
     private int cantidad;
+
     @Column(name = "subtotal", precision = 10, scale = 2)
     private BigDecimal subtotal;
 
-    //Inyecciones
     @ManyToOne
     @JoinColumn(name = "id_factura")
+
     private Factura factura;
+
     @ManyToOne
     @JoinColumn(name = "id_libro")
+
     private Libro libro;
 
+    // 🔹 CONSTRUCTOR VACÍO CORRECTO
     public FacturaDetalle() {
-        this.idFacturaDetalle = idFacturaDetalle;
-        this.cantidad = cantidad;
-        this.subtotal = subtotal;
-        this.factura = factura;
-        this.libro = libro;
     }
 
+    // getters y setters
     public int getIdFacturaDetalle() {
         return idFacturaDetalle;
     }
@@ -71,20 +71,5 @@ public class FacturaDetalle {
 
     public void setLibro(Libro libro) {
         this.libro = libro;
-    }
-
-    public void setFactura(Cliente cliente) {
-        this.factura = factura;
-    }
-
-    @Override
-    public String toString() {
-        return "FacturaDetalle{" +
-                "idFacturaDetalle=" + idFacturaDetalle +
-                ", cantidad=" + cantidad +
-                ", subtotal=" + subtotal +
-                ", factura=" + factura +
-                ", libro=" + libro +
-                '}';
     }
 }
