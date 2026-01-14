@@ -14,7 +14,7 @@ public class AutorServiceImpl implements AutorService {
     private AutorDAO autorDAO;
 
     @Override
-    public List<Autor> finAll() {
+    public List<Autor> findAll() {
         return autorDAO.findAll();
     }
 

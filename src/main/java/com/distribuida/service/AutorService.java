@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface AutorService {
 
-    public List<Autor> finAll();
+    public List<Autor> findAll();
 
     public Optional<Autor> findOne(int id);
 

@@ -18,7 +18,7 @@ public class AutorController {
 
     @GetMapping
     public ResponseEntity<List<Autor>> findAll() {
-        List<Autor> autores = autorService.finAll();
+        List<Autor> autores = autorService.findAll();
         return ResponseEntity.ok(autores);
     }
 
