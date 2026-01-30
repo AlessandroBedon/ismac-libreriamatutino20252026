@@ -14,6 +14,7 @@ import { CategoriaService } from "../../services/categoria";
     templateUrl: './categoria.html',
     styleUrl: './categoria.css',
 })
+
 export class CategoriaComponent implements OnInit {
     @ViewChild('formularioCategoria') formularioCategoria!: ElementRef;
     @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -40,7 +41,7 @@ export class CategoriaComponent implements OnInit {
     }
 
     findAll(): void {
-        this.categoriaService.findAll().subscribe(data => {
+        this.categoriaService.findAll().subscribe((data: Categoria[]) => {
             this.dataSource = new MatTableDataSource(data);
             this.dataSource.paginator = this.paginator;
             this.dataSource.sort = this.sort;

@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-md-4 mb-2">
                 <input class="form-control" type="text" placeholder="Categoria" [(ngModel)] = "categoria.categoria" 
-                        name="categoria" required #categoria="ngModel"[ngClass]="{'is-invalid': categoria.invalid && categoria.touched}" > 
+                        name="categoria" required #categoriaModel="ngModel"[ngClass]="{'is-invalid': categoriaModel.invalid && categoriaModel.touched}" > 
             </div>  
             <div class="col-md-4 mb-2">
                 <input class="form-control" type="text" placeholder="Descripción" [(ngModel)] = "categoria.descripcion" 
-                        name="descripcion" required #descripcion="ngModel"[ngClass]="{'is-invalid': descripcion.invalid && descripcion.touched}" > 
+                        name="descripcion" required #descripcionModel="ngModel"[ngClass]="{'is-invalid': descripcionModel.invalid && descripcionModel.touched}" > 
             </div>
         </div>
         <button type="submit" class="btn btn-primary me-2" [disabled]="formCategoria.invalid">
