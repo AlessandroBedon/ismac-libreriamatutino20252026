@@ -19,6 +19,9 @@ import { CategoriaComponent } from './components/categoria/categoria';
 import { AutorComponent } from './components/autor/autor';
 import { LibroComponent } from './components/libro/libro';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
 ],
   providers: [
     provideBrowserGlobalErrorListeners(),
