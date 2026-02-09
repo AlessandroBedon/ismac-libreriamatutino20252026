@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
+import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-libro',
@@ -30,13 +31,15 @@ export class LibroComponent implements OnInit {
   dataSource!: MatTableDataSource<Libro>;
   seleccionarArchivo!: File;
   imagenAnterior: string = "";
+  libroSeleccionado: Libro | null = null;
 
-  mostrarColumnas: String[] = ['idLibro','titulo','editorial','edicion','idioma','fechaPublicacion','numEjemplares','precio','autor','categoria','acciones'];
+  mostrarColumnas: String[] = ['detalles','idLibro','titulo','editorial','edicion','idioma','fechaPublicacion','numEjemplares','precio','autor','categoria','acciones'];
 
   @ViewChild('formularioLibro') formularioLibro!: ElementRef;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild('modalLibro') modalLibro!: TemplateRef<any>;
+  @ViewChild('modalDetalles') modalDetalles!: TemplateRef<any>;
 
   constructor(
   private libroService: LibroService,
@@ -191,9 +194,15 @@ export class LibroComponent implements OnInit {
     });
   }
 
-  
+  abrirModalDetalles(libro: Libro): void{
+    this.libroSeleccionado = libro;
+    this.dialog.open(this.modalDetalles,{ width: '500px'});
+  }
 
-
+  cerrarModal(): void{
+    this.dialog.closeAll();
+    this.libroSeleccionado = null;
+  }
 
 
 }
