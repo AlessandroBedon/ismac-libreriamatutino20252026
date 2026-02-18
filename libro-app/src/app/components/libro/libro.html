@@ -227,7 +227,7 @@
             <button mat-button mat-dialog-close>Cancelar</button>
             <button mat-flat-button color="primary" (click)="guardarLibro()" [disabled]="formLibro.invalid">
                 {{ editar ? 'Actualizar' : 'Guardar' }}
-            </button>
+                </button>
         </mat-dialog-actions>
     </ng-template>
 
@@ -241,7 +241,7 @@
                     style="width: 400px; margin-top: 1rem;"
                 />
             </div>
-            <p><strong>Título:</strong>{{libroSeleccionado?.titulo}}</p>
+            <p><strong>Título:</strong>{{libroSeleccionado?.titulo}}</p>                                            
             <p><strong>Editorial:</strong>{{libroSeleccionado?.editorial}}</p>
             <p><strong>Idioma:</strong>{{libroSeleccionado?.idioma}}</p>
             <p><strong>Fecha de Publicación:</strong>{{libroSeleccionado?.fechaPublicacion}}</p>
